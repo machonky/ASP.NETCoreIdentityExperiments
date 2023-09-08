@@ -1,9 +1,11 @@
-﻿using IdentityApp.Models.Configuration;
+﻿using IdentityApp.Models;
+using IdentityApp.Models.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdentityApp.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<User, Role, Ulid>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
     : base(options)
@@ -12,6 +14,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder); // Required to build the Identity tables
         modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
     }
 
