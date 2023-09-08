@@ -9,8 +9,7 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, Ulid>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
     : base(options)
-    {
-    }
+    {}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -12,20 +12,7 @@ public class User : IdentityUser<Ulid>
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+    public override string? ConcurrencyStamp { get; set; } = Ulid.NewUlid().ToString();
 }
-
-//public class UserClaim : IdentityUserClaim<Ulid>
-//{ }
-
-//public class UserRole : IdentityUserRole<Ulid>
-//{ }
-
-//public class UserLogin : IdentityUserLogin<Ulid>
-//{ }
-
-//public class UserToken : IdentityUserToken<Ulid>
-//{ }
-
-//public class RoleClaim : IdentityRoleClaim<Ulid>
-//{ }
 
