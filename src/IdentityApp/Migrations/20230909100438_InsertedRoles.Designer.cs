@@ -3,6 +3,7 @@ using System;
 using IdentityApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IdentityApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230909100438_InsertedRoles")]
+    partial class InsertedRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
@@ -86,15 +89,13 @@ namespace IdentityApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "01H9X57PT58F3Q0MCD78JCQKKY",
-                            ConcurrencyStamp = "01H9X57PT5B3KQTGJPVG2EWN3K",
+                            Id = "01H9WPD3DJJ6ZEMKDB0EDTVGJ6",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "01H9X57PT5FCYFP9ACX61PSF65",
-                            ConcurrencyStamp = "01H9X57PT5GKXSH2NGKY3FC16A",
+                            Id = "01H9WPD3DJ6TZE9ECDSCC9C874",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

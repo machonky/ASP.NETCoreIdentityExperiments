@@ -8,4 +8,6 @@ public class Role : IdentityRole<Ulid>
     {
         Id = Ulid.NewUlid();
     }
+
+    public override string? ConcurrencyStamp { get; set; } = Ulid.NewUlid().ToString();
 }

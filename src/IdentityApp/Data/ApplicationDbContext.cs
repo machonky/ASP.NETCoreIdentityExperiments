@@ -19,6 +19,8 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, Ulid>
         base.OnModelCreating(modelBuilder); // Required to build the Identity tables
 
         modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+        modelBuilder.ApplyConfiguration(new RoleConfiguration());
+
         AssignEntitySchema(modelBuilder);
     }
 
